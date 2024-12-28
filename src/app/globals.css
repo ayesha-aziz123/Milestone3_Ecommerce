@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components{
+    .nav-Link{
+        @apply text-[18px] hover:text-accent
+    }
+}
+.loader2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    width:150px;
+    border-radius: 50%;
+    border: 20px solid brown;
+    border-top: 20px solid black;
+    animation: name1 1s linear 0s infinite normal;
+  }
+  
+  @keyframes name1 {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  
+  
+  
