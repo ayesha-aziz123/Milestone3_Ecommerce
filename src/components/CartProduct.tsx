@@ -1,3 +1,4 @@
+"use client"
 import { RxCross1 } from "react-icons/rx";
 import { removeFromCart } from "@/redux/features/cartSlice";
 import { useAppDispatch } from "@/redux/Hooks";

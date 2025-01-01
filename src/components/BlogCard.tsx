@@ -23,7 +23,7 @@ function BlogCard({ img, title, comment, date }: propsType) {
         <span>{date} / </span>
         <span>{comment} Comments </span>
       </div>
-      <h3 className="font-bold text-xl">{title} </h3>
+      <h3 className="font-bold lg:text-[20px] text-xs">{title} </h3>
     </div>
   );
 }

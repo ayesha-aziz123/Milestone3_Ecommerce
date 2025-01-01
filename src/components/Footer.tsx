@@ -39,7 +39,7 @@ function Footer() {
             placeholder="Enter email here"
             className=" px-2 py-1  sm:px-9 sm:py-2 text-gray-600  rounded-sm mx-2 border-none outline-none text-[17px]"
           />
-          <button onClick={()=>alert("Submit Successfully")} className=" border-2 p-[3px] sm:p-[7px] font-semibold   border-white">
+          <button  className=" border-2 p-[3px] sm:p-[7px] font-semibold   border-white">
             Subscribe
           </button>
           <p className="py-4 text-[14px] text-gray-400">

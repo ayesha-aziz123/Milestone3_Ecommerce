@@ -1,3 +1,4 @@
+"use client"
 import { useAppSelector } from "@/redux/Hooks";
 import { Whisper } from "next/font/google";
 import Link from "next/link";
@@ -11,7 +12,7 @@ interface NavbarProps {
   setShowCart: React.Dispatch<React.SetStateAction<boolean>>;
 }
 function Navbar({ setShowCart }: NavbarProps) {
-  const cartCount = useAppSelector((state) => state.cartReducer.length);
+  const cartCount = useAppSelector((state) => state.cart.length);
 
   return (
     <div className="  backdrop-blur-[20px] bg-[#1e1e1ee2] text-white sticky top-0 z-10 py-4">

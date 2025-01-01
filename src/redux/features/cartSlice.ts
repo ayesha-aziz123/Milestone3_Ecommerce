@@ -8,30 +8,46 @@ interface IProduct {
   quantity: number;
 }
 
-const initialState: Array<IProduct> = [];
+// LocalStorage se cart data ko retrieve karna
+const getCartFromLocalStorage = (): Array<IProduct> => {
+  if (typeof window !== "undefined") {
+    const savedCart = localStorage.getItem("cart");
+    return savedCart ? JSON.parse(savedCart) : [];
+  }
+  return [];
+};
+
+// Cart ka initial state
+const initialState: Array<IProduct> = getCartFromLocalStorage();
 
 export const cartSlice = createSlice({
-  name: "cartSlice",
+  name: "cart",
   initialState,
   reducers: {
     addToCart: (state, action: PayloadAction<IProduct>) => {
-      if (state.findIndex((pro) => pro.id === action.payload.id) === -1) {
+      const existingIndex = state.findIndex((pro) => pro.id === action.payload.id);
+      if (existingIndex === -1) {
         state.push(action.payload);
       } else {
-        return state.map(
-          (item) =>
-            item.id === action.payload.id
-              ? { ...item, quantity: item.quantity + 1 }
-              : item
-        );
+        state[existingIndex].quantity += 1;
       }
+
+      // LocalStorage ko update karein
+      localStorage.setItem("cart", JSON.stringify(state));
     },
     removeFromCart: (state, action: PayloadAction<number>) => {
-      const id = action.payload;
-      return state.filter((item) => item.id !== id);
+      const updatedCart = state.filter((item) => item.id !== action.payload);
+
+      // LocalStorage ko update karein
+      localStorage.setItem("cart", JSON.stringify(updatedCart));
+
+      return updatedCart;
     },
     clearCart: () => {
-      return []; // Empty the cart when the order is successful
+      // LocalStorage ko clear karein
+      localStorage.removeItem("cart");
+
+      return []; // Cart ko empty karein
     },
   },
 });

@@ -2,27 +2,23 @@ import React from "react";
 
 const ContactForm = () => {
   return (
-    <div className="bg-[#232121] rounded-lg p-4 sm:p-10">
+    <div className="bg-[#363535] rounded-lg p-4 sm:p-10">
       <h1 className="text-bg text-2xl md:text-3xl lg:text-[2.5rem] font-bold">
         Let&apos;s Work together!
       </h1>
-      <p className="text-gray-200 mt-3 text-xs md:text-sm lg:text-base">
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime, ea
-        neque natus soluta sequi hic optio tenetur quo alias beatae dolorem
-        similique
-      </p>
+      
       {/* Form  */}
       <form className="mt-8 w-full block overflow-hidden">
         <div className="flex flex-col md:flex-row items-center gap-4 justify-between ">
           <input
             type="text"
             placeholder="First name"
-            className="flex-1 bg-white text-black placeholder:text-gray-600 px-3 py-3 rounded-md border-[1.5px] border-gray-200 border-opacity-15 outline-none w-full"
+            className="flex-1 bg-white text-black placeholder:text-gray-600 px-3 py-2 rounded-md border-[1.5px] border-gray-200 border-opacity-15 outline-none w-full"
           />
           <input
             type="text"
             placeholder="Last name"
-            className="flex-1 bg-white text-black placeholder:text-gray-600 px-3 py-3 rounded-md border-[1.5px] border-gray-200 border-opacity-15 outline-none w-full"
+            className="flex-1 bg-white text-black placeholder:text-gray-600 px-3 py-2 rounded-md border-[1.5px] border-gray-200 border-opacity-15 outline-none w-full"
           />
         </div>
 
@@ -30,17 +26,17 @@ const ContactForm = () => {
           <input
             type="email"
             placeholder="Email"
-            className="flex-1 bg-white text-black placeholder:text-gray-600 px-3 py-3 rounded-md border-[1.5px] border-gray-200 border-opacity-15 outline-none w-full"
+            className="flex-1 bg-white text-black placeholder:text-gray-600 px-3 py-2 rounded-md border-[1.5px] border-gray-200 border-opacity-15 outline-none w-full"
           />
           <input
             type="tel"
             placeholder="phone"
-            className="flex-1 bg-white text-black placeholder:text-gray-600 px-3 py-3 rounded-md border-[1.5px] border-gray-200 border-opacity-15 outline-none w-full"
+            className="flex-1 bg-white text-black placeholder:text-gray-600 px-3 py-2 rounded-md border-[1.5px] border-gray-200 border-opacity-15 outline-none w-full"
           />
         </div>
        
         <textarea
-          rows={7}
+          rows={5}
           placeholder="Message"
           className="bg-white mt-5 text-black placeholder:text-gray-600 px-6 py-3.5 rounded-md border-[1.5px] border-gray-200 border-opacity-15 outline-none w-full"
         ></textarea>

@@ -23,7 +23,7 @@ function Hero() {
         </p>
        <Link href={"/shop"}>
        <button
-          className="bg-[#333] uppercase text-white text-[12px] lg:text-[16px] py-2  xl:py-4
+          className="bg-[#333] uppercase my-3 text-white text-[12px] lg:text-[16px] py-2  xl:py-4
         px-8 rounded-md hover:bg-accent "
         >
           Shop Now

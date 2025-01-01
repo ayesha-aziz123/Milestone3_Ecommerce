@@ -1,10 +1,12 @@
 "use client"
 import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
-import { ProductDetails } from "@/utils/ProductData";
+import { products } from "@/app/api/products/product";
 import Link from "next/link";
 import Image from "next/image";
 import { addToCart } from "@/redux/features/cartSlice";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 interface PI {
   id: number;
@@ -33,13 +35,12 @@ const DetailPage = () => {
 
   useEffect(() => {
     const id = params.id;
-    const getProductData = ProductDetails.filter((item) => item.id.toString() === id)[0];
+    const getProductData = products.filter((item) => item.id.toString() === id)[0];
 
     setProductData(getProductData);
   }, [params.id]);
 
   const addProductToCart = () => {
-    alert("Product Added to cart")
     if (productData) {
       const payload = {
         id: productData.id,
@@ -49,12 +50,15 @@ const DetailPage = () => {
         quantity: 1,
       };
       dispatch(addToCart(payload));
+
+      toast.success(`${productData.name} added to cart!`);
     }
   };
 
   return (
     <div className="pt-8 ">
       <div className="bg-gray-100 py-4">
+      <ToastContainer />
         <div className="container flex gap-4  items-center text-gray-500 ">
           <Link href={"/"} className="cursor-pointer hover:text-accent">
             Home

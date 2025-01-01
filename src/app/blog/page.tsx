@@ -4,7 +4,11 @@ import React from 'react'
 function page() {
   return (
     <div>
-        <h1 className='text-3xl font-semibold  text-center py-9 bg-gray-600 text-white'>Latest Blog</h1>
+        <h1 className='text-4xl tracking-wider font-bold  text-center py-7 bg-gray-600 text-white'>
+          <p className='animate-bounce'>
+          Latest Blog
+          </p>
+        </h1>
         <BlogSection/>
     </div>
   )
